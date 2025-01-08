@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peduli Lingkungan Hidup</title>
+    <style>
+        /* Reset margin dan padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styling umum */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #e1f7d5;
+            color: #333;
+        }
+
+        header {
+            background: #2c7d59;
+            /* Hijau tua */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 5px;
+            background-color: white;
+        }
+
+        /* Banner Section */
+        .banner {
+            background-image: url('https://dislhk.badungkab.go.id/storage/olds/dislhk/KELESTARIAN-LINGKUNGAN-HIDUP_211790.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .banner p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Us Section */
+        .about {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #2c7d59;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Action Section */
+        .action {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .action h2 {
+            font-size: 2.5rem;
+            color: #2c7d59;
+            margin-bottom: 20px;
+        }
+
+        .action p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .action button {
+            padding: 15px 30px;
+            background-color: #2c7d59;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action button:hover {
+            background-color: #1f5d43;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c7d59;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsif Styling */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                width: 100%;
+                padding: 0;
+            }
+
+            nav ul li a {
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            .banner h2 {
+                font-size: 2rem;
+            }
+
+            .banner p {
+                font-size: 1.2rem;
+            }
+
+            .about h2,
+            .action h2 {
+                font-size: 2rem;
+            }
+
+            .about p,
+            .action p {
+                font-size: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+
+            .banner h2 {
+                font-size: 1.6rem;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <h1>Peduli Lingkungan</h1>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#action">Aksi Kami</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <h2>Selamatkan Bumi, Mulai dari Sekarang!</h2>
+        <p>Lingkungan yang sehat adalah kunci untuk masa depan yang lebih baik. Mari bersama-sama menjaga dan
+            melestarikan alam untuk generasi mendatang.</p>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about" class="about">
+        <h2>Tentang Kami</h2>
+        <p>Kami adalah organisasi yang peduli terhadap lingkungan dan keberlanjutan alam. Kami berkomitmen untuk
+            menyebarkan kesadaran tentang pentingnya menjaga bumi kita dan melibatkan masyarakat dalam kegiatan
+            pelestarian alam. Melalui program-program yang kami jalankan, kami berharap dapat memberikan dampak positif
+            terhadap lingkungan.</p>
+    </div>
+
+    <!-- Action Section -->
+    <div id="action" class="action">
+        <h2>Aksi Kami</h2>
+        <p>Kami percaya bahwa setiap tindakan kecil dapat membawa perubahan besar. Beberapa aksi yang kami lakukan
+            antara lain:
+        <ul>
+            <li>Pembersihan pantai dan sungai</li>
+            <li>Penanaman pohon di berbagai lokasi</li>
+            <li>Program edukasi tentang daur ulang dan pengurangan sampah plastik</li>
+        </ul>
+        Bergabunglah dalam gerakan kami untuk menjaga bumi agar tetap lestari.
+        </p>
+        <button onclick="window.location.href='mailto:contact@pedulilingkungan.org'">Bergabung Sekarang</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Peduli Lingkungan. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
