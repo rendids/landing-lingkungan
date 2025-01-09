@@ -19,11 +19,11 @@
             line-height: 1.6;
             background-color: #e1f7d5;
             color: #333;
+            transition: all 0.3s ease-in-out;
         }
 
         header {
-            background: #2c7d59;
-            /* Hijau tua */
+            background: #2c7d59; /* Hijau tua */
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -113,6 +113,22 @@
             line-height: 1.8;
         }
 
+        .about .cta-button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #2c7d59;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .about .cta-button:hover {
+            background-color: #1f5d43;
+        }
+
         /* Action Section */
         .action {
             padding: 50px 20px;
@@ -146,7 +162,7 @@
         }
 
         .action button:hover {
-            background-color: #1f5d43;
+            background-color: #2c1f5d;
         }
 
         /* Footer */
@@ -155,6 +171,60 @@
             color: white;
             text-align: center;
             padding: 20px 0;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+
+        .gallery h2 {
+            font-size: 2.5rem;
+            color: #2c7d59;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            font-size: 1.8rem;
+            color: #2c7d59;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            color: #555;
         }
 
         /* Responsif Styling */
@@ -220,6 +290,27 @@
                 font-size: 1rem;
             }
         }
+
+        /* Back to top button */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #550dda;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #backToTop:hover {
+            background-color: #1f5d43;
+        }
+
     </style>
 </head>
 
@@ -228,7 +319,6 @@
     <!-- Header Section -->
     <header>
         <nav>
-            <h1>Peduli Lingkungan</h1>
             <div class="hamburger" onclick="toggleMenu()">
                 <div></div>
                 <div></div>
@@ -246,24 +336,20 @@
     <!-- Banner Section -->
     <div class="banner">
         <h2>Selamatkan Bumi, Mulai dari Sekarang!</h2>
-        <p>Lingkungan yang sehat adalah kunci untuk masa depan yang lebih baik. Mari bersama-sama menjaga dan
-            melestarikan alam untuk generasi mendatang.</p>
+        <p>Lingkungan yang sehat adalah kunci untuk masa depan yang lebih baik. Mari bersama-sama menjaga dan melestarikan alam untuk generasi mendatang.</p>
     </div>
 
     <!-- About Us Section -->
     <div id="about" class="about">
         <h2>Tentang Kami</h2>
-        <p>Kami adalah organisasi yang peduli terhadap lingkungan dan keberlanjutan alam. Kami berkomitmen untuk
-            menyebarkan kesadaran tentang pentingnya menjaga bumi kita dan melibatkan masyarakat dalam kegiatan
-            pelestarian alam. Melalui program-program yang kami jalankan, kami berharap dapat memberikan dampak positif
-            terhadap lingkungan.</p>
+        <p>Kami adalah organisasi yang peduli terhadap lingkungan dan keberlanjutan alam. Kami berkomitmen untuk menyebarkan kesadaran tentang pentingnya menjaga bumi kita dan melibatkan masyarakat dalam kegiatan pelestarian alam. Melalui program-program yang kami jalankan, kami berharap dapat memberikan dampak positif terhadap lingkungan.</p>
+        <button class="cta-button" onclick="window.location.href='mailto:contact@pedulilingkungan.org'">Bergabung dalam Gerakan</button>
     </div>
 
     <!-- Action Section -->
     <div id="action" class="action">
         <h2>Aksi Kami</h2>
-        <p>Kami percaya bahwa setiap tindakan kecil dapat membawa perubahan besar. Beberapa aksi yang kami lakukan
-            antara lain:
+        <p>Kami percaya bahwa setiap tindakan kecil dapat membawa perubahan besar. Beberapa aksi yang kami lakukan antara lain:
         <ul>
             <li>Pembersihan pantai dan sungai</li>
             <li>Penanaman pohon di berbagai lokasi</li>
@@ -274,15 +360,60 @@
         <button onclick="window.location.href='mailto:contact@pedulilingkungan.org'">Bergabung Sekarang</button>
     </div>
 
+    <!-- Gallery Section -->
+    <div id="gallery" class="gallery">
+        <h2>Galeri Kegiatan</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://asset-2.tstatic.net/wartakota/foto/bank/images/feri-40-pekerja-musiman-membersihkan-sampah-dengan-alat-garpudi-pantai-tanjung-pasir.jpg" alt="Pembersihan Pantai" />
+                <div class="card-content">
+                    <h3>Pembersihan Pantai</h3>
+                    <p>Gerakan bersama untuk membersihkan pantai dan menjaga ekosistem laut.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://ppid.menlhk.go.id/media/articles/5/uLJM_IMG-20231230-WA0014.jpg" alt="Penanaman Pohon" />
+                <div class="card-content">
+                    <h3>Penanaman Pohon</h3>
+                    <p>Menanam pohon untuk mengurangi polusi udara dan menjaga keberagaman hayati.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://pict.sindonews.net/dyn/850/pena/news/2022/02/26/170/697611/edukasi-daur-ulang-sampah-mnc-peduli-kertabumi-recycling-cente-semoga-terus-berjalan-uue.jpg" alt="Edukasi Daur Ulang" />
+                <div class="card-content">
+                    <h3>Edukasi Daur Ulang</h3>
+                    <p>Mengajarkan cara-cara mengurangi sampah dengan mendaur ulang barang-barang yang tidak terpakai.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Peduli Lingkungan. Semua hak dilindungi.</p>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
+
     <script>
         function toggleMenu() {
             const nav = document.querySelector('nav');
             nav.classList.toggle('active');
+        }
+
+        // Scroll to top functionality
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     </script>
 
